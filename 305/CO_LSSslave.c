@@ -335,7 +335,7 @@ bool_t CO_LSSslave_process(CO_LSSslave_t *LSSslave) {
         bool_t CANsend = false;
         uint32_t valSw;
 
-        memset(&LSSslave->TXbuff->data[0], 0, sizeof(LSSslave->TXbuff->data));
+        memset(&LSSslave->TXbuff->data[0], 0, CO_CANtxMsg_buffSize);
 
         switch (LSSslave->service) {
         case CO_LSS_SWITCH_STATE_GLOBAL: {
